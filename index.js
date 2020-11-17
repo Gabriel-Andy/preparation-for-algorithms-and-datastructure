@@ -27,18 +27,21 @@ const ValidAnagram = (str1, str2) => {
 // the time complexity of this function is O(n)
 console.log(ValidAnagram("rat", "car"));
 
-const arraySorted = (array) => {
+const countUniqueValue = (array) => {
   let counter = {};
   for (let char of array) {
     counter[char] = (counter[char] || 0) + 1;
+    console.log(counter)
   }
   let newObject = Object.keys(counter);
-  console.log(newObject);
+
   let objectLength = newObject.length;
+  if (newObject[0] === "") {
+    return 0;
+  }
+
   return objectLength;
 };
-console.log(
-  arraySorted([3, 3, 3, 5, 3, 4, 5, 4, 7, 9, 6666, 66, 66, 66, 66, 66])
-);
+console.log(countUniqueValue([""]));
 // the time complexity is O(n)  linear time
 // space complexity is O(1) constant time
